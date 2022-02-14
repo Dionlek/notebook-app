@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NoteService } from 'src/app/note.service';
 
@@ -9,10 +10,9 @@ import { NoteService } from 'src/app/note.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NoteDetailComponent implements OnInit {
-
+  id: number;
   @Input() title: string;
   @Input() text: string;
-
   @Input() link: string;
 
   @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
@@ -20,6 +20,8 @@ export class NoteDetailComponent implements OnInit {
   constructor(private noteService: NoteService,
               private router: Router,
               private route: ActivatedRoute) { }
+
+  noteForm: FormGroup;
 
   ngOnInit(): void {
   }

@@ -57,7 +57,4 @@ export class NoteInfoComponent implements OnInit {
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
    }
-
-  
-
 }

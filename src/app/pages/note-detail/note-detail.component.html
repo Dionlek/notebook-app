@@ -1,4 +1,6 @@
 <div #container class="card">
+
+    <a [routerLink]="link">
         <div class="card-body">
             <h1 class="card-title">{{ title }}</h1>
             <div class="card-text">
@@ -7,5 +9,8 @@
                 </div>
             </div>
         </div>
+
+    </a>
+
     <a href="#" class="btn btn-danger" (click)="onDeleteNote()">Delete</a>
 </div>

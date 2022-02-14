@@ -56,5 +56,4 @@ export class NoteListComponent implements OnInit {
     this.noteService.deleteNote(id);
     this.router.navigateByUrl('../');
   }
-
 }
