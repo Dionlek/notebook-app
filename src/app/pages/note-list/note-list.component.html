@@ -1,1 +1,13 @@
-<p>note-list works!</p>
+<div class="main-container">
+        <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+          [(ngModel)]='listFilter' placeholder="Enter text to search" 
+          autofocus>
+    <div class="notes-list">
+        <app-note-detail 
+            *ngFor="let note of filteredNotes; let i = index;" 
+            [title]="note.title" 
+            [text]="note.description"
+            [routerLink]="[i]"></app-note-detail>
+    </div>
+    <button class="button" class="btn btn-primary" routerLink="new">Add Note</button>
+</div>
