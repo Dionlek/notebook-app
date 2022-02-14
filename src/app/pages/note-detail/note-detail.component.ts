@@ -9,9 +9,13 @@ import { NoteService } from 'src/app/note.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NoteDetailComponent implements OnInit {
-  id: number;
+
   @Input() title: string;
   @Input() text: string;
+
+  @Input() link: string;
+
+  @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
   
   constructor(private noteService: NoteService,
               private router: Router,
@@ -21,8 +25,11 @@ export class NoteDetailComponent implements OnInit {
   }
 
   onDeleteNote() {
-    this.noteService.deleteNote(this.id);
-    this.router.navigate(['./']);
+    //this.noteService.deleteNote(this.id);
+    this.deleteEvent.emit();
+    //this.router.navigate(['../'], {relativeTo: this.route});
+  
+    //this.router.navigateByUrl('../');
   }
 
 }

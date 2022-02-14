@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Note } from 'src/app/note.model';
 import { NoteService } from 'src/app/note.service';
@@ -16,7 +17,8 @@ export class NoteListComponent implements OnInit {
   //notes: Note[];
   subscription: Subscription;
 
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService,
+              private router: Router) { }
 
   filteredNotes: Note[] = [];
 
@@ -48,6 +50,11 @@ export class NoteListComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  deleteNoteById(id: number) {
+    this.noteService.deleteNote(id);
+    this.router.navigateByUrl('../');
   }
 
 }

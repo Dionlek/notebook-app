@@ -11,7 +11,7 @@ const routes: Routes = [
     {path: 'new', component: NoteInfoComponent},
     {path: ':id', component: NoteInfoComponent}
   ]},
-  //{ path: '**', component: PageNotFoundComponent},   
+  { path: '**', component: PageNotFoundComponent},   
   { path: '**', redirectTo: '/', pathMatch: 'full'}
   
 ];

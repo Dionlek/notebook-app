@@ -7,7 +7,8 @@
             *ngFor="let note of filteredNotes; let i = index;" 
             [title]="note.title" 
             [text]="note.description"
-            [routerLink]="[i]"></app-note-detail>
+            [routerLink]="[i]"
+            (delete)="deleteNoteById(i)"></app-note-detail>
     </div>
     <button class="button" class="btn btn-primary" routerLink="new">Add Note</button>
 </div>
