@@ -6,10 +6,11 @@ import { NoteListComponent } from './pages/note-list/note-list.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, children: [
-    {path: '',  component: NoteListComponent},
+  {path: '', redirectTo:'/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent, children: [
+    {path: '', component: NoteListComponent},
     {path: 'new', component: NoteInfoComponent},
-    {path: ':id', component: NoteInfoComponent},
+    {path: ':id', component: NoteInfoComponent}
   ]},
   {path: '**', component: PageNotFoundComponent}
 ];

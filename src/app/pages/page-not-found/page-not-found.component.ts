@@ -14,11 +14,11 @@ export class PageNotFoundComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit() {
-    let self = this;
+  // ngAfterViewInit() {
+  //   let self = this;
 
-    setTimeout(function () {
-      self.router.navigate(['./']);
-    }, 3000)
-  }
+  //   setTimeout(function () {
+  //     self.router.navigate(['./']);
+  //   }, 3000)
+  // }
 }
